@@ -1,0 +1,85 @@
+<div class="terminalBig">
+  <div class="terminalHeader">
+    <div class="dot redBg"></div>
+    <div class="dot yellowBg"></div>
+    <div class="dot greenBg"></div>
+  </div>
+  <div class="divider"></div>
+  <div class="terminalContent">
+    <div class="line">
+      <span class="pink">const&nbsp;</span>
+      <span class="white">coder&nbsp;</span>
+      <span class="pink">=&nbsp;</span>
+      <span class="gray">{{ "{" }}</span>
+    </div>
+    <div class="line indent">
+      <span class="white"> name: </span>
+      <span class="gray">'</span>
+      <span class="yellow">Maciej Mościcki</span>
+      <span class="gray">'</span>
+
+      <span class="gray">,</span>
+    </div>
+    <div class="line indent">
+      <span class="white">skills: </span>
+      <span class="gray">[&nbsp;</span>
+      @for (item of skills; track $index) {
+      <span class="gray">'</span>
+      <span class="yellow">{{ item }}</span
+      ><span *ngIf="$index !== skills.length - 1" class="gray"
+        >{{ "'," }}
+      </span>
+      <span *ngIf="$index === skills.length - 1" class="gray">{{ "'" }} </span>
+      }
+      <span class="gray">]</span>
+      <span class="gray">,</span>
+    </div>
+    <div class="line indent">
+      <span class="white"> hardWorker: </span>
+      <span class="orange">true</span>
+      <span class="gray">,</span>
+    </div>
+    <div class="line indent">
+      <span class="white"> quickLerner: </span>
+      <span class="orange">true</span>
+      <span class="gray">,</span>
+    </div>
+    <div class="line indent">
+      <span class="white"> problemSolver: </span>
+      <span class="orange">true</span>
+      <span class="gray">,</span>
+    </div>
+    <div class="line indent">
+      <span class="green"> hireable: </span>
+      <span class="orange">function</span>
+      <span class="gray">{{ "() {" }}</span>
+      <div class="line indent">
+        <span class="orange">return </span>
+        <span class="gray">{{ "(" }}</span>
+        <div class="line indent">
+          <span class="blue">this.</span>
+          <span class="white">hardworker&nbsp;</span>
+          <span class="yellow">{{ "&&" }}</span>
+        </div>
+        <div class="line indent">
+          <span class="blue">this.</span>
+          <span class="white">problemSolver&nbsp;</span>
+          <span class="yellow">{{ "&&" }}</span>
+        </div>
+        <div class="line indent">
+          <span class="blue">this.</span>
+          <span class="white">skills.length&nbsp;</span>
+          <span class="yellow">{{ ">= " }}</span>
+          <span class="orange">5</span>
+        </div>
+      </div>
+      <div class="line indent">
+        <span class="gray">{{ ")" }}</span>
+      </div>
+    </div>
+    <div class="line indent">
+      <span class="gray">{{ "}" }}</span>
+    </div>
+    <span class="gray">{{ "}" }}</span>
+  </div>
+</div>

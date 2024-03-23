@@ -1,0 +1,18 @@
+.toastContainer {
+  position: fixed;
+  top: 0;
+  right: 0;
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+  z-index: 100;
+}
+.toast {
+  height: 4rem;
+  width: 90%;
+  margin: 1rem;
+  border-radius: 8px;
+}
+.slideInFromTop {
+  animation: slideInFromTop 2s;
+}

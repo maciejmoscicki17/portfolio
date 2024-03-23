@@ -1,0 +1,57 @@
+.terminalBig {
+  width: 90%;
+  background-color: black;
+  border-radius: 8px;
+  font-family: monospace;
+  //   animation: slideInFromTop 0.5s;
+  margin: auto;
+  position: relative;
+  box-sizing: border-box;
+  $border: 1px;
+  color: #fff;
+  background-image: linear-gradient(to bottom right, black, #272822);
+  background-clip: padding-box;
+  border: solid $border transparent;
+  border-radius: 1em;
+
+  &:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: -1;
+    margin: -$border;
+    border-radius: inherit;
+    background: linear-gradient(to bottom right, var(--pink), blue);
+  }
+}
+
+.terminalHeader {
+  display: flex;
+  align-items: center;
+  padding-inline: 1rem;
+  gap: 0.5rem;
+  height: 2rem;
+}
+
+.indent {
+  margin-left: 40px;
+}
+.divider {
+  width: 100%;
+  height: 1px;
+  background-color: gray;
+}
+.terminalContent {
+  display: flex;
+  flex-direction: column;
+  padding: 3rem;
+}
+
+.dot {
+  height: 10px;
+  aspect-ratio: 1;
+  border-radius: 50%;
+}

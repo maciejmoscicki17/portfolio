@@ -1,0 +1,7 @@
+<div class="toastContainer">
+  @for (toast of toasts; track toast.id) {
+  <div class="toast" [class]="getColor(toast)" [ngClass]="toast.animationClass">
+    <span>{{ toast.content }}</span>
+  </div>
+  }
+</div>
