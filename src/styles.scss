@@ -10,15 +10,19 @@
   --lightGreen: #4ade80;
   --blue: #22d3ee;
 }
-
+app-root {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 html {
   scroll-behavior: smooth;
 }
 body {
-  //   background-color: #0d1224;
   background: linear-gradient(88deg, #000000, #0c1124);
   background-size: 400% 400%;
-
+  display: flex;
+  justify-content: center;
   -webkit-animation: bg 11s ease infinite;
   -moz-animation: bg 11s ease infinite;
   animation: bg 11s ease infinite;

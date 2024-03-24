@@ -1,0 +1,20 @@
+#about {
+  padding-block: 4rem;
+  display: flex;
+  gap: 4rem;
+}
+.image {
+  display: flex;
+  align-items: center;
+}
+img {
+  max-height: 20rem;
+  -webkit-filter: grayscale(100%);
+  filter: grayscale(100%);
+  transition: all 2s;
+  &:hover {
+    filter: unset;
+    scale: 1.1;
+    animation: filter 1s;
+  }
+}

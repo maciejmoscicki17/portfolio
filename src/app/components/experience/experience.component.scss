@@ -1,0 +1,61 @@
+#experience {
+  min-height: 20px;
+  display: flex;
+}
+.half {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+}
+.image {
+  display: flex;
+  align-items: center;
+}
+img {
+  max-height: 20rem;
+  -webkit-filter: grayscale(100%);
+  filter: grayscale(100%);
+  transition: all 2s;
+  &:hover {
+    filter: unset;
+    scale: 1.1;
+    animation: filter 1s;
+  }
+}
+.card {
+  background-color: rgba(255, 255, 255, 0.02);
+  cursor: pointer;
+  padding: 1rem;
+  border: 1px solid gray;
+  border-radius: 8px;
+  height: 10rem;
+  width: 80%;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  &::before {
+    background: radial-gradient(
+      800px circle at var(--mouse-x) var(--mouse-y),
+      rgba(255, 255, 255, 0.1),
+      transparent 40%
+    );
+    height: 100%;
+    left: 0px;
+    position: absolute;
+    top: 0px;
+    width: 100%;
+    content: "";
+    border-radius: inherit;
+    z-index: 2;
+  }
+}
+h3,
+h4,
+h5 {
+  margin: 0;
+}
