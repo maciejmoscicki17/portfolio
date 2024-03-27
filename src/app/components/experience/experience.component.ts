@@ -2,6 +2,7 @@ import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { CardComponent } from '../card/card.component';
 import { SectionTitleComponent } from '../section-title/section-title.component';
+import { ScreenSizeService } from '../../services/screen-size.service';
 
 export interface ExperienceData {
   dateFrom: Date;
@@ -18,7 +19,15 @@ export interface ExperienceData {
   styleUrl: './experience.component.scss',
 })
 export class ExperienceComponent {
+  isMobile = this.screenSizeService.isMobile;
   title = 'Experience';
+
+  constructor(private screenSizeService: ScreenSizeService) {
+    this.screenSizeService.$isMobile().subscribe((isMobile) => {
+      this.isMobile = isMobile;
+    });
+  }
+
   jobs: ExperienceData[] = [
     {
       companyName: 'Proman S.p.z o o',

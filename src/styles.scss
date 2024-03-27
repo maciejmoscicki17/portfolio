@@ -40,6 +40,10 @@ body {
 body {
   min-height: 100vh;
 }
+
+.invertColor {
+  filter: invert(1);
+}
 .red {
   color: var(--red);
 }

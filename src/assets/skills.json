@@ -17,6 +17,10 @@
       "icon": "/assets/svg/css.svg"
     },
     {
+      "name": "Sass",
+      "icon": "/assets/svg/sass.svg"
+    },
+    {
       "name": "Typescript",
       "icon": "/assets/svg/typescript.svg"
     },

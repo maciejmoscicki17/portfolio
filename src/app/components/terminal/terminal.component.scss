@@ -1,10 +1,8 @@
 .terminalBig {
   min-width: 300px;
-  width: 90%;
   background-color: black;
   border-radius: 8px;
   font-family: monospace;
-  margin: auto;
   position: relative;
   box-sizing: border-box;
   $border: 1px;
@@ -26,32 +24,35 @@
     border-radius: inherit;
     background: linear-gradient(to bottom right, var(--pink), blue);
   }
-}
 
-.terminalHeader {
-  display: flex;
-  align-items: center;
-  padding-inline: 1rem;
-  gap: 0.5rem;
-  height: 2rem;
-}
+  .terminalHeader {
+    display: flex;
+    align-items: center;
+    padding-inline: 1rem;
+    gap: 0.5rem;
+    height: 2rem;
+  }
 
-.indent {
-  margin-left: 40px;
-}
-.divider {
-  width: 100%;
-  height: 1px;
-  background-color: gray;
-}
-.terminalContent {
-  display: flex;
-  flex-direction: column;
-  padding: 3rem;
-}
+  .indent {
+    margin-left: 40px;
+  }
+  .divider {
+    width: 100%;
+    height: 1px;
+    background-color: gray;
+  }
+  .terminalContent {
+    display: flex;
+    flex-direction: column;
+    padding: 2rem;
+    &.mobile {
+      padding: 1rem;
+    }
+  }
 
-.dot {
-  height: 10px;
-  aspect-ratio: 1;
-  border-radius: 50%;
+  .dot {
+    height: 10px;
+    aspect-ratio: 1;
+    border-radius: 50%;
+  }
 }

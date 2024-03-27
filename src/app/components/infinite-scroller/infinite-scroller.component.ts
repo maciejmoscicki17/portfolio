@@ -2,14 +2,14 @@ import {
   AfterViewChecked,
   Component,
   ElementRef,
-  OnInit,
+  Input,
   ViewChild,
 } from '@angular/core';
-import { Skill } from '../../interfaces/skill';
-import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { HttpClientModule } from '@angular/common/http';
 import { CommonModule } from '@angular/common';
 import { CardComponent } from '../card/card.component';
 import { SectionTitleComponent } from '../section-title/section-title.component';
+import { Skill } from '../../interfaces/skill';
 
 @Component({
   selector: 'app-infinite-scroller',
@@ -24,32 +24,18 @@ import { SectionTitleComponent } from '../section-title/section-title.component'
   styleUrl: './infinite-scroller.component.scss',
 })
 export class InfiniteScrollerComponent implements AfterViewChecked {
-  title = 'Skills';
   @ViewChild('scroller') scroller!: ElementRef<HTMLDivElement>;
   @ViewChild('innerScroller') innerScroller!: ElementRef<HTMLDivElement>;
+  @Input() skills: Skill[] = [];
 
   firstLoad = true;
 
-  skills: Skill[] = [];
-  constructor(private http: HttpClient) {}
+  constructor() {}
   ngAfterViewChecked(): void {
     if (this.firstLoad) {
       if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
         this.addAnimation();
       }
-      this.http.get<{ skills: Skill[] }>('/assets/skills.json').subscribe({
-        next: (data) => {
-          data.skills.forEach((skill) => {
-            if (skill.name === '.NET' || skill.name === 'Firebird') {
-              skill.invert = true;
-            }
-          });
-          this.skills = data.skills;
-        },
-        error: (err) => {
-          console.error(err);
-        },
-      });
     }
   }
 

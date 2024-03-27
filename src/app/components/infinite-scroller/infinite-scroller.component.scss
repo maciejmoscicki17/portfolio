@@ -17,10 +17,6 @@
     aspect-ratio: 1;
   }
 
-  .invertColor {
-    filter: invert(1);
-  }
-
   &[data-animated="true"] {
     overflow: hidden;
     -webkit-mask: var(--linear-gradient);

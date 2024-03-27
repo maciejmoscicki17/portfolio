@@ -1,0 +1,19 @@
+<app-section-title id="skills" [title]="title"></app-section-title>
+
+@if (!isMobile) { @if (skills) {
+
+<app-infinite-scroller [skills]="skills"></app-infinite-scroller> } } @else {
+<div class="carousel">
+  @for (skill of skills; track $index) {
+  <app-card class="item" border="">
+    <span>{{ skill.name }}</span
+    ><br />
+    <img
+      [src]="skill.icon"
+      [alt]="skill.name"
+      [ngClass]="{ invertColor: skill.invert }"
+    />
+  </app-card>
+  }
+</div>
+}

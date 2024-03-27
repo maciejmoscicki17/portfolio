@@ -3,7 +3,7 @@
   [title]="title"
   position="left"
 ></app-section-title>
-<div class="experience">
+<div class="experience" [ngClass]="{ mobile: isMobile }">
   <div class="half">
     <div class="image">
       <img src="assets/monalisa.jpg" alt="monalisa" />

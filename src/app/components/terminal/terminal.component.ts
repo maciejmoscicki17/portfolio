@@ -1,5 +1,6 @@
 import { CommonModule } from '@angular/common';
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
+import { ScreenSizeService } from '../../services/screen-size.service';
 
 @Component({
   selector: 'app-terminal',
@@ -9,7 +10,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrl: './terminal.component.scss',
 })
 export class TerminalComponent {
-  constructor() {}
+  isMobile = this.screenSizeService.isMobile;
+  constructor(private screenSizeService: ScreenSizeService) {
+    this.screenSizeService
+      .$isMobile()
+      .subscribe((isMobile) => (this.isMobile = isMobile));
+  }
   skills = [
     'Angular',
     '.NET',
