@@ -17,18 +17,9 @@ export class ScrollToTopComponent {
 
   @HostListener('window:scroll', [])
   onWindowScroll() {
-    if (
-      (window.pageYOffset ||
-        document.documentElement.scrollTop ||
-        document.body.scrollTop) > 100
-    ) {
+    if (document.documentElement.scrollTop > 50) {
       this.showButton = true;
-    } else if (
-      this.showButton &&
-      (window.pageYOffset ||
-        document.documentElement.scrollTop ||
-        document.body.scrollTop) < 10
-    ) {
+    } else {
       this.showButton = false;
     }
   }

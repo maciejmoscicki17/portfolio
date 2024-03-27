@@ -2,7 +2,7 @@
   <div
     class="card gray"
     [style.border]="border"
-    [attr.disableBefore]="disableBefore"
+    [ngClass]="{ disableBefore: disableBefore }"
   >
     <ng-content></ng-content>
   </div>

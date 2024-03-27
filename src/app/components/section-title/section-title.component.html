@@ -1,0 +1,11 @@
+<div class="sectionTitle">
+  @if (position !== 'left') {
+  <hr class="line" [style.background-color]="lineColor" />
+  }
+  <div class="title" [style.background-color]="titleBackground">
+    {{ title }}
+  </div>
+  @if (position !== 'right') {
+  <hr class="line" [style.background-color]="lineColor" />
+  }
+</div>

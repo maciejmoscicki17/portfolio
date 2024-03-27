@@ -12,6 +12,7 @@ export class CardComponent implements AfterViewInit {
   @Input() border = '1px solid gray';
   @Input() disableBefore = false;
   @Input() scaleOnHover = false;
+
   ngAfterViewInit(): void {
     document.querySelectorAll('.card').forEach((e) => {
       e.addEventListener('mousemove', (m) => {

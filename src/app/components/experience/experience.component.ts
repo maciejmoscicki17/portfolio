@@ -1,6 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { CardComponent } from '../card/card.component';
+import { SectionTitleComponent } from '../section-title/section-title.component';
 
 export interface ExperienceData {
   dateFrom: Date;
@@ -12,11 +13,12 @@ export interface ExperienceData {
 @Component({
   selector: 'app-experience',
   standalone: true,
-  imports: [CommonModule, CardComponent],
+  imports: [CommonModule, CardComponent, SectionTitleComponent],
   templateUrl: './experience.component.html',
   styleUrl: './experience.component.scss',
 })
 export class ExperienceComponent {
+  title = 'Experience';
   jobs: ExperienceData[] = [
     {
       companyName: 'Proman S.p.z o o',

@@ -1,8 +1,10 @@
-<div
+<app-section-title
   id="introduction"
-  class="introductionLayout"
-  [ngClass]="{ isCompact: isCompact }"
->
+  [title]="title"
+  position="left"
+></app-section-title>
+
+<div class="introductionLayout" [ngClass]="{ isCompact: isCompact }">
   <div class="description">
     <app-description></app-description>
   </div>

@@ -9,15 +9,22 @@ import { Skill } from '../../interfaces/skill';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { CommonModule } from '@angular/common';
 import { CardComponent } from '../card/card.component';
+import { SectionTitleComponent } from '../section-title/section-title.component';
 
 @Component({
   selector: 'app-infinite-scroller',
   standalone: true,
-  imports: [HttpClientModule, CommonModule, CardComponent],
+  imports: [
+    HttpClientModule,
+    CommonModule,
+    CardComponent,
+    SectionTitleComponent,
+  ],
   templateUrl: './infinite-scroller.component.html',
   styleUrl: './infinite-scroller.component.scss',
 })
-export class InfiniteScrollerComponent implements OnInit, AfterViewChecked {
+export class InfiniteScrollerComponent implements AfterViewChecked {
+  title = 'Skills';
   @ViewChild('scroller') scroller!: ElementRef<HTMLDivElement>;
   @ViewChild('innerScroller') innerScroller!: ElementRef<HTMLDivElement>;
 
@@ -45,7 +52,6 @@ export class InfiniteScrollerComponent implements OnInit, AfterViewChecked {
       });
     }
   }
-  ngOnInit(): void {}
 
   addAnimation() {
     this.scroller.nativeElement.setAttribute('data-animated', 'true');

@@ -1,4 +1,5 @@
-<div #scroller id="scroller" class="scroller">
+<app-section-title id="scroller" [title]="title"></app-section-title>
+<div #scroller class="scroller">
   <div #innerScroller class="innerScroller">
     @for (skill of skills; track $index) {
     <app-card border="" [disableBefore]="true" [scaleOnHover]="true">

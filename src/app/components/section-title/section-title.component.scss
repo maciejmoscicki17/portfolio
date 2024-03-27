@@ -1,0 +1,22 @@
+.sectionTitle {
+  display: flex;
+  align-items: center;
+}
+.line {
+  flex-grow: 1;
+}
+hr {
+  height: 1px;
+  border: 0;
+  margin-inline: 1rem;
+  background-color: var(--gray);
+}
+
+.title {
+  font-size: large;
+  font-weight: 600;
+  border-radius: 4px;
+  padding-block: 0.5rem;
+  display: grid;
+  place-items: center;
+}
