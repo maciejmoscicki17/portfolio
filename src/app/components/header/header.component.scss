@@ -6,13 +6,6 @@ nav {
   padding: 1rem;
   gap: 2rem;
 }
-a {
-  text-decoration: none;
-  color: unset;
-  &:visited {
-    color: unset;
-  }
-}
 .title {
   align-items: center;
 }
@@ -21,4 +14,14 @@ a {
 
   display: flex;
   gap: 5rem;
+  a {
+    text-decoration: none;
+    color: unset;
+    &:visited {
+      color: unset;
+    }
+    &:hover {
+      color: var(--pink);
+    }
+  }
 }

@@ -20,7 +20,7 @@ img {
   max-height: 20rem;
   -webkit-filter: grayscale(100%);
   filter: grayscale(100%);
-  transition: all 2s;
+  transition: all 1s;
   &:hover {
     filter: unset;
     scale: 1.1;
