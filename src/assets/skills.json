@@ -1,0 +1,40 @@
+{
+  "skills": [
+    {
+      "name": "Angular",
+      "icon": "/assets/svg/angular.svg"
+    },
+    {
+      "name": "C#",
+      "icon": "/assets/svg/csharp.svg"
+    },
+    {
+      "name": ".NET",
+      "icon": "/assets/svg/dotnet.svg"
+    },
+    {
+      "name": "CSS",
+      "icon": "/assets/svg/css.svg"
+    },
+    {
+      "name": "Typescript",
+      "icon": "/assets/svg/typescript.svg"
+    },
+    {
+      "name": "SQL",
+      "icon": "/assets/svg/sql.svg"
+    },
+    {
+      "name": "Git",
+      "icon": "/assets/svg/git.svg"
+    },
+    {
+      "name": "Firebird",
+      "icon": "/assets/svg/firebird.svg"
+    },
+    {
+      "name": "HTML",
+      "icon": "/assets/svg/html.svg"
+    }
+  ]
+}

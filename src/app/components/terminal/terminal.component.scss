@@ -1,16 +1,15 @@
 .terminalBig {
-  min-width: 350px;
+  min-width: 300px;
   width: 90%;
   background-color: black;
   border-radius: 8px;
   font-family: monospace;
-  //   animation: slideInFromTop 0.5s;
   margin: auto;
   position: relative;
   box-sizing: border-box;
   $border: 1px;
   color: #fff;
-  background-image: linear-gradient(to bottom right, black, #272822);
+  background-image: var(--accent-gradient);
   background-clip: padding-box;
   border: solid $border transparent;
   border-radius: 1em;

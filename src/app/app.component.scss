@@ -2,6 +2,10 @@
   width: 100%;
   height: 100%;
 }
-.layout {
-  width: 80%;
+.mobile,
+.desktop {
+  width: 90vw;
+}
+.tablet {
+  width: 80vw;
 }

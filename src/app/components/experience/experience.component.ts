@@ -1,5 +1,6 @@
 import { CommonModule } from '@angular/common';
-import { AfterViewInit, Component } from '@angular/core';
+import { Component } from '@angular/core';
+import { CardComponent } from '../card/card.component';
 
 export interface ExperienceData {
   dateFrom: Date;
@@ -11,33 +12,11 @@ export interface ExperienceData {
 @Component({
   selector: 'app-experience',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, CardComponent],
   templateUrl: './experience.component.html',
   styleUrl: './experience.component.scss',
 })
-export class ExperienceComponent implements AfterViewInit {
-  ngAfterViewInit(): void {
-    document.querySelectorAll('.card').forEach((e) => {
-      e.addEventListener('mousemove', (m) => {
-        const { currentTarget } = m as MouseEvent;
-        if (currentTarget instanceof HTMLElement) {
-          const rect = currentTarget.getBoundingClientRect();
-          const x = (m as MouseEvent).clientX - rect.left;
-          const y = (m as MouseEvent).clientY - rect.top;
-          currentTarget.style.setProperty('--mouse-x', `${x}px`);
-          currentTarget.style.setProperty('--mouse-y', `${y}px`);
-        }
-      });
-      e.addEventListener('mouseleave', (m) => {
-        const { currentTarget } = m as MouseEvent;
-        if (currentTarget instanceof HTMLElement) {
-          currentTarget.style.removeProperty('--mouse-x');
-          currentTarget.style.removeProperty('--mouse-y');
-        }
-      });
-    });
-  }
-
+export class ExperienceComponent {
   jobs: ExperienceData[] = [
     {
       companyName: 'Proman S.p.z o o',

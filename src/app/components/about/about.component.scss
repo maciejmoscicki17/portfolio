@@ -1,12 +1,21 @@
 #about {
-  padding-block: 4rem;
   display: flex;
   gap: 4rem;
 }
+
+.isMobile {
+  flex-direction: column-reverse;
+}
+
 .image {
   display: flex;
   align-items: center;
 }
+
+.centerImage {
+  justify-content: center;
+}
+
 img {
   max-height: 20rem;
   -webkit-filter: grayscale(100%);

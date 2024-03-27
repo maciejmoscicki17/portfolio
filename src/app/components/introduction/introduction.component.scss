@@ -1,11 +1,11 @@
 .introductionLayout {
   display: flex;
-  @media screen and (max-width: 768px) {
-    flex-direction: column-reverse;
-  }
 }
 .terminal,
 .description {
   flex-grow: 1;
   flex-basis: 0;
+}
+.isCompact {
+  flex-direction: column-reverse;
 }

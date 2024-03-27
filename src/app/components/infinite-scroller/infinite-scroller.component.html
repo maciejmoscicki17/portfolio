@@ -1,0 +1,17 @@
+<div #scroller id="scroller" class="scroller">
+  <div #innerScroller class="innerScroller">
+    @for (skill of skills; track $index) {
+    <app-card border="" [disableBefore]="true" [scaleOnHover]="true">
+      <div class="scrollerItem">
+        <span>{{ skill.name }}</span
+        ><br />
+        <img
+          [src]="skill.icon"
+          [alt]="skill.name"
+          [ngClass]="{ invertColor: skill.invert }"
+        />
+      </div>
+    </app-card>
+    }
+  </div>
+</div>

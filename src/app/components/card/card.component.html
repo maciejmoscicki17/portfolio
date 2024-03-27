@@ -1,0 +1,9 @@
+<div class="cardContainer" [ngClass]="{ scale: scaleOnHover }">
+  <div
+    class="card gray"
+    [style.border]="border"
+    [attr.disableBefore]="disableBefore"
+  >
+    <ng-content></ng-content>
+  </div>
+</div>

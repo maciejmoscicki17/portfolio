@@ -1,6 +1,13 @@
 <!-- <img src="assets/shadergradient.gif" id="selector" [alt]="" /> -->
 @defer {
-<div class="layout">
+<div
+  class="layout"
+  [ngClass]="{
+    mobile: screenSize === 0,
+    tablet: screenSize === 1,
+    desktop: screenSize === 2
+  }"
+>
   <app-toast></app-toast>
   <app-header></app-header>
   <app-content></app-content>

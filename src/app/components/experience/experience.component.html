@@ -7,15 +7,17 @@
   </div>
   <div class="half">
     @for (job of jobs; track $index) {
-    <div class="card gray">
-      <h5 class="green">
-        {{ job.dateFrom | date : "mediumDate" }} - @if (job.dateTo) {
-        {{ job.dateTo | date : "mediumDate" }}
-        } @else { Present }
-      </h5>
-      <h3>{{ job.companyName }}</h3>
-      <h4>{{ job.position }}</h4>
-    </div>
+    <app-card>
+      <div class="innerCard">
+        <h5 class="green">
+          {{ job.dateFrom | date : "mediumDate" }} - @if (job.dateTo) {
+          {{ job.dateTo | date : "mediumDate" }}
+          } @else { Present }
+        </h5>
+        <h3>{{ job.companyName }}</h3>
+        <h4>{{ job.position }}</h4>
+      </div>
+    </app-card>
     }
   </div>
 </div>
