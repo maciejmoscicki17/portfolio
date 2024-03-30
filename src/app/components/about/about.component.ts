@@ -20,6 +20,5 @@ export class AboutComponent {
     this.screenSizeService
       .$isMobile()
       .subscribe((val) => (this.isMobile = val));
-    console.log(this.description.split(' ').length);
   }
 }

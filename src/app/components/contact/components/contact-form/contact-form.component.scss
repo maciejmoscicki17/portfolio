@@ -1,5 +1,6 @@
 * {
   transition: border 500ms ease-out;
+  color: var(--textColor);
 }
 
 .form {
@@ -30,7 +31,7 @@
   }
   input,
   textarea {
-    background-color: #10172d;
+    background-color: var(--bgColor);
     color: #fff !important;
     border-radius: 8px;
     padding: 0.5rem;

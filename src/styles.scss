@@ -10,6 +10,13 @@
   --lightGreen: #4ade80;
   --blue: #22d3ee;
   --accent-gradient: linear-gradient(to bottom right, black, #272822);
+  --colorTheme: dark;
+  --background: linear-gradient(88deg, #000000, #0c1124);
+  --bgColor: #10172d;
+  --textColor: white;
+  --cardColor: rgba(255, 255, 255, 0.02);
+  --thirdColor: var(--yellow);
+  color-scheme: var(--colorTheme);
 }
 app-root {
   display: flex;
@@ -20,13 +27,11 @@ html {
   scroll-behavior: smooth;
 }
 body {
-  background: linear-gradient(88deg, #000000, #0c1124);
+  transition: color 1s, background 1s;
+  background: var(--background);
   background-size: 400% 400%;
   display: flex;
   justify-content: center;
-  -webkit-animation: bg 11s ease infinite;
-  -moz-animation: bg 11s ease infinite;
-  animation: bg 11s ease infinite;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   height: 100vh;
   padding: 0;
@@ -45,43 +50,50 @@ body {
   filter: invert(1);
 }
 .red {
-  color: var(--red);
+  color: var(--red) !important;
 }
 .redBg {
-  background-color: var(--red);
+  background-color: var(--red) !important;
 }
 .greenBg {
-  background-color: var(--green);
+  background-color: var(--green) !important;
 }
 .yellow {
-  color: var(--yellow);
+  color: var(--yellow) !important;
 }
 .yellowBg {
-  background-color: var(--yellow);
-  color: black;
+  background-color: var(--yellow) !important;
+  color: black !important;
 }
 .pink {
-  color: var(--pink);
+  color: var(--pink) !important;
 }
 .white {
-  color: var(--white);
+  color: var(--white) !important;
+}
+.textColor {
+  color: var(--textColor) !important;
 }
 .gray {
-  color: var(--gray);
+  color: var(--gray) !important;
 }
 .orange {
-  color: var(--orange);
+  color: var(--orange) !important;
 }
 .green {
-  color: var(--lightGreen);
+  color: var(--lightGreen) !important;
 }
 .blue {
-  color: var(--blue);
+  color: var(--blue) !important;
+}
+.thirdColor {
+  color: var(--thirdColor);
 }
 .largeText {
   font-weight: 1000;
   font-size: larger;
 }
+
 @keyframes slideInFromTop {
   from {
     transform: translateY(-100px);

@@ -10,6 +10,7 @@ import { CommonModule } from '@angular/common';
 import { CardComponent } from '../card/card.component';
 import { SectionTitleComponent } from '../section-title/section-title.component';
 import { Skill } from '../../interfaces/skill';
+import { ColorThemeService } from '../../services/color-theme.service';
 
 @Component({
   selector: 'app-infinite-scroller',
@@ -30,13 +31,16 @@ export class InfiniteScrollerComponent implements AfterViewChecked {
 
   firstLoad = true;
 
-  constructor() {}
+  constructor(private themeService: ColorThemeService) {}
   ngAfterViewChecked(): void {
     if (this.firstLoad) {
       if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
         this.addAnimation();
       }
     }
+    this.themeService.$themeChanged
+      .asObservable()
+      .subscribe((x) => this.onColorSchemeChange());
   }
 
   addAnimation() {
@@ -48,6 +52,21 @@ export class InfiniteScrollerComponent implements AfterViewChecked {
         const duplicatedItem = item.cloneNode(true) as HTMLDivElement;
         duplicatedItem.setAttribute('aria-hidden', 'true');
         this.innerScroller.nativeElement.appendChild(duplicatedItem);
+      });
+    }
+  }
+  onColorSchemeChange() {
+    if (this.themeService.currentTheme === 'dark') {
+      this.skills.forEach((skill) => {
+        if (skill.name === '.NET' || skill.name === 'Firebird') {
+          skill.invert = true;
+        }
+      });
+    } else {
+      this.skills.forEach((skill) => {
+        if (skill.name === '.NET' || skill.name === 'Firebird') {
+          skill.invert = false;
+        }
       });
     }
   }

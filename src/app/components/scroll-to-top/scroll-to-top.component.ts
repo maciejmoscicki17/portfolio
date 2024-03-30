@@ -14,15 +14,11 @@ import {
   templateUrl: './scroll-to-top.component.html',
   styleUrl: './scroll-to-top.component.scss',
 })
-export class ScrollToTopComponent implements AfterViewChecked {
-  @ViewChild('button') button!: ElementRef<HTMLButtonElement>;
+export class ScrollToTopComponent {
   showButton: boolean;
 
   constructor() {
     this.showButton = false;
-  }
-  ngAfterViewChecked(): void {
-    console.log(this.button.nativeElement);
   }
 
   @HostListener('window:scroll', [])
@@ -35,7 +31,6 @@ export class ScrollToTopComponent implements AfterViewChecked {
   }
 
   scrollToTop() {
-    console.log(this.button.nativeElement);
     window.scroll({
       top: 0,
       left: 0,

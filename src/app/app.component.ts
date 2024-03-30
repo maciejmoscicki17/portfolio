@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { AfterViewChecked, Component, OnInit } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { HeaderComponent } from './components/header/header.component';
 import { ContentComponent } from './components/content/content.component';
@@ -6,6 +6,8 @@ import { ToastComponent } from './components/toast/toast.component';
 import { ScreenSizeService } from './services/screen-size.service';
 import { ScreenSizeEnum } from './enums/screen-size';
 import { CommonModule } from '@angular/common';
+import { ProgressBarComponent } from './components/progress-bar/progress-bar.component';
+import { ColorThemeService } from './services/color-theme.service';
 
 @Component({
   selector: 'app-root',
@@ -16,15 +18,23 @@ import { CommonModule } from '@angular/common';
     HeaderComponent,
     ContentComponent,
     ToastComponent,
+    ProgressBarComponent,
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
 })
-export class AppComponent implements OnInit {
+export class AppComponent implements OnInit, AfterViewChecked {
   screenSize: ScreenSizeEnum;
-  constructor(private screenSizeService: ScreenSizeService) {
+  firstLoad = true;
+  constructor(
+    private screenSizeService: ScreenSizeService,
+    private themeService: ColorThemeService
+  ) {
     this.screenSize = this.screenSizeService.screenType;
     document.title = 'Macieks Portfolio';
+  }
+  ngAfterViewChecked(): void {
+    // this.themeService.setTheme();
   }
   ngOnInit(): void {
     this.screenSizeService.$screenType().subscribe((size) => {

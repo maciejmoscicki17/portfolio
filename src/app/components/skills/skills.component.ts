@@ -20,6 +20,7 @@ import { CommonModule } from '@angular/common';
   styleUrl: './skills.component.scss',
 })
 export class SkillsComponent implements AfterViewChecked {
+  //TODO: Naprawić aktualizaje kolorów skilli po zmianie motywu
   isMobile = this.screenSizeService.isMobile;
   title = 'Skills';
   skills: Skill[] = [];
@@ -38,11 +39,6 @@ export class SkillsComponent implements AfterViewChecked {
     if (!this.loaded) {
       this.http.get<{ skills: Skill[] }>('/assets/skills.json').subscribe({
         next: (data) => {
-          data.skills.forEach((skill) => {
-            if (skill.name === '.NET' || skill.name === 'Firebird') {
-              skill.invert = true;
-            }
-          });
           this.skills = data.skills;
           this.loaded = true;
         },

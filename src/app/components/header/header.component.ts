@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ToastService, ToastType } from '../../services/toast.service';
 import { ScreenSizeService } from '../../services/screen-size.service';
+import { ColorThemeService } from '../../services/color-theme.service';
 
 @Component({
   selector: 'app-header',
@@ -13,7 +14,8 @@ export class HeaderComponent implements OnInit {
   isMobile: boolean = this.screenSizeService.isMobile;
   constructor(
     private toastService: ToastService,
-    private screenSizeService: ScreenSizeService
+    private screenSizeService: ScreenSizeService,
+    private themeService: ColorThemeService
   ) {}
   ngOnInit(): void {
     this.screenSizeService.$isMobile().subscribe((x) => (this.isMobile = x));
@@ -23,5 +25,9 @@ export class HeaderComponent implements OnInit {
       content: 'Tost',
       type: ToastType.warning,
     });
+  }
+
+  setTheme() {
+    this.themeService.toggleTheme();
   }
 }

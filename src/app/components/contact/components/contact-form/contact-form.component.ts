@@ -40,7 +40,6 @@ export class ContactFormComponent {
   constructor(private fb: FormBuilder, private toastService: ToastService) {}
 
   onSubmit() {
-    console.log('submit', this.contactForm.value, this.contactForm.valid);
     this.isSubmitted = true;
     if (this.contactForm.valid) {
       this.toastService.add({

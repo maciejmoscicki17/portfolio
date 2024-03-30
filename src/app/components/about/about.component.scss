@@ -2,6 +2,9 @@
   display: flex;
   gap: 4rem;
 }
+.description {
+  color: var(--textColor);
+}
 
 .isMobile {
   flex-direction: column-reverse;

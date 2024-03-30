@@ -3,7 +3,6 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-
   justify-content: space-evenly;
   border: 1px solid gray;
   border-radius: 8px;
@@ -11,9 +10,8 @@
   height: 100%;
   a {
     text-decoration: none;
-    // min-width: 20rem;
     text-align: center;
-    color: aliceblue;
+    color: var(--textColor);
     display: flex;
     align-items: center;
     justify-content: start;
