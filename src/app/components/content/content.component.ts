@@ -5,6 +5,7 @@ import { ExperienceComponent } from '../experience/experience.component';
 import { ScrollToTopComponent } from '../scroll-to-top/scroll-to-top.component';
 import { FooterComponent } from '../footer/footer.component';
 import { SkillsComponent } from '../skills/skills.component';
+import { ContactComponent } from '../contact/contact.component';
 
 @Component({
   selector: 'app-content',
@@ -16,6 +17,7 @@ import { SkillsComponent } from '../skills/skills.component';
     ScrollToTopComponent,
     SkillsComponent,
     FooterComponent,
+    ContactComponent,
   ],
   templateUrl: './content.component.html',
   styleUrl: './content.component.scss',

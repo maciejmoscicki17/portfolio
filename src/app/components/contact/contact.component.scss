@@ -1,0 +1,13 @@
+.container {
+  display: flex;
+  max-width: 100vw;
+  overflow: hidden;
+
+  &.mobile {
+    flex-direction: column;
+  }
+  .item {
+    flex: 1;
+    padding: 1rem;
+  }
+}

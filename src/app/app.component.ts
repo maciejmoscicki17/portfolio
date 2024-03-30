@@ -24,6 +24,7 @@ export class AppComponent implements OnInit {
   screenSize: ScreenSizeEnum;
   constructor(private screenSizeService: ScreenSizeService) {
     this.screenSize = this.screenSizeService.screenType;
+    document.title = 'Macieks Portfolio';
   }
   ngOnInit(): void {
     this.screenSizeService.$screenType().subscribe((size) => {

@@ -10,9 +10,54 @@
 .toast {
   height: 4rem;
   width: 90%;
-  margin: 1rem;
+  margin: 0.5rem 0;
   border-radius: 8px;
+  max-height: 500px;
+  overflow: hidden;
+  transition: max-height 1s linear, margin 1s linear;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding-inline: 0.5rem;
+  padding-block: 0.5rem;
+
+  span {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+    overflow: hidden;
+  }
+  .close {
+    cursor: pointer;
+  }
+}
+.remove {
+  max-height: 0px;
+  height: 0px;
+  margin-block: 0;
+  color: transparent;
+  padding-inline: 0.5rem;
+  padding-block: 0.000001rem;
+
+  transition: max-height 1s linear, height 1s linear, margin 1s linear,
+    color 600ms linear, padding-block 1s linear;
 }
 .slideInFromTop {
   animation: slideInFromTop 2s;
 }
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+    height: 0;
+    margin: 0;
+    padding: 0;
+  }
+}
+// .remove {
+//   flex: 0 0.00001;
+//   transition: all 2s;
+// }

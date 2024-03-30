@@ -16,6 +16,7 @@ import { CommonModule } from '@angular/common';
 export class ToastComponent implements OnInit {
   toasts: ToastData[] = [];
   readonly toastTypes = ToastType;
+
   constructor(private toastService: ToastService) {
     this.toastService.showToast.subscribe((toast) => {
       this.toasts.push(toast);
@@ -26,7 +27,16 @@ export class ToastComponent implements OnInit {
   }
   ngOnInit(): void {}
   removeToast(id: number) {
-    this.toasts = this.toasts.filter((x) => x.id !== id);
+    const toast = this.toasts.find((x) => x.id === id);
+    if (toast) {
+      toast.toDelete = true;
+      setTimeout(() => {
+        const index = this.toasts.indexOf(toast);
+        if (index !== -1) {
+          this.toasts.splice(index, 1);
+        }
+      }, 1000);
+    }
   }
 
   getColor(toast: ToastData) {

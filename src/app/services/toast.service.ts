@@ -9,12 +9,12 @@ export enum ToastType {
 
 export interface ToastData {
   id?: number;
-  title: string;
   content: string;
   show?: boolean;
   type: ToastType;
   time?: number;
   animationClass?: string;
+  toDelete?: boolean;
 }
 
 @Injectable({

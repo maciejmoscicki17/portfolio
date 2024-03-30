@@ -1,0 +1,40 @@
+<form
+  class="form"
+  [formGroup]="contactForm"
+  (ngSubmit)="onSubmit()"
+  [class.valid]="isReady()"
+  [class.touched]="isTouched()"
+>
+  @for (field of formFields; track $index) {
+
+  <div class="field">
+    <label>{{ field.label }}: </label>
+    @if (field.name !== 'message') {
+    <input
+      type="{{ field.type }}"
+      formControlName="{{ field.name }}"
+      [class.invalid]="isFormInvalid(field.name)"
+      [class.valid]="isFormValid(field.name)"
+    />
+    } @else {
+    <textarea
+      type="text"
+      formControlName="message"
+      [class.invalid]="isFormInvalid('message')"
+      [class.valid]="isFormValid('message')"
+      oninput="this.style.height = ''; this.style.height = this.scrollHeight - 15 +'px'"
+    ></textarea>
+    } @if (isFormInvalid(field.name)) {
+    <span class="red">
+      {{ field.errorMsg }}
+    </span>
+    } @if (!isFormInvalid(field.name)) {
+    <span class="emptySpan">&nbsp;</span>
+    }
+  </div>
+  }
+
+  <div>
+    <button type="submit" class="bn5">Send message</button>
+  </div>
+</form>

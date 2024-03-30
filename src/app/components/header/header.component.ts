@@ -21,7 +21,6 @@ export class HeaderComponent implements OnInit {
   showToast() {
     this.toastService.add({
       content: 'Tost',
-      title: 'title',
       type: ToastType.warning,
     });
   }

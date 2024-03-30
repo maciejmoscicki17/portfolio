@@ -1,0 +1,10 @@
+<div class="container">
+  @for (item of contactInfo; track $index) {
+  <a [href]="item.href" target="_blank">
+    <span class="icon">
+      <i [classList]="item.className"></i>
+    </span>
+    {{ item.text }}
+  </a>
+  }
+</div>

@@ -1,7 +1,21 @@
 <div class="toastContainer">
   @for (toast of toasts; track toast.id) {
-  <div class="toast" [class]="getColor(toast)" [ngClass]="toast.animationClass">
+  <div
+    class="toast"
+    [class]="getColor(toast)"
+    [ngClass]="toast.animationClass"
+    [class.remove]="toast.toDelete"
+  >
+    @switch (toast.type) { @case (toastTypes.warning) {
+    <i class="fa-solid fa-triangle-exclamation"></i>
+    } @case (toastTypes.success) {
+    <i class="fa-solid fa-check"></i>
+    } @case (toastTypes.error) {
+    <i class="fa-solid fa-circle-exclamation"></i>
+    } }
     <span>{{ toast.content }}</span>
+    <i (click)="removeToast(toast.id!)" class="fa-solid fa-xmark close"></i>
   </div>
+
   }
 </div>

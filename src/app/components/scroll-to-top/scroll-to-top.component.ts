@@ -1,5 +1,11 @@
 import { CommonModule } from '@angular/common';
-import { Component, HostListener } from '@angular/core';
+import {
+  AfterViewChecked,
+  Component,
+  ElementRef,
+  HostListener,
+  ViewChild,
+} from '@angular/core';
 
 @Component({
   selector: 'app-scroll-to-top',
@@ -8,11 +14,15 @@ import { Component, HostListener } from '@angular/core';
   templateUrl: './scroll-to-top.component.html',
   styleUrl: './scroll-to-top.component.scss',
 })
-export class ScrollToTopComponent {
+export class ScrollToTopComponent implements AfterViewChecked {
+  @ViewChild('button') button!: ElementRef<HTMLButtonElement>;
   showButton: boolean;
 
   constructor() {
     this.showButton = false;
+  }
+  ngAfterViewChecked(): void {
+    console.log(this.button.nativeElement);
   }
 
   @HostListener('window:scroll', [])
@@ -25,6 +35,7 @@ export class ScrollToTopComponent {
   }
 
   scrollToTop() {
+    console.log(this.button.nativeElement);
     window.scroll({
       top: 0,
       left: 0,
