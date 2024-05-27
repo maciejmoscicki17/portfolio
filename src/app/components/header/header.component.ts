@@ -18,6 +18,7 @@ export class HeaderComponent implements OnInit {
     private themeService: ColorThemeService
   ) {}
   ngOnInit(): void {
+    this.themeService.init();
     this.screenSizeService.$isMobile().subscribe((x) => (this.isMobile = x));
   }
   showToast() {

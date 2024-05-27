@@ -3,6 +3,7 @@ import {
   Component,
   ElementRef,
   Input,
+  OnInit,
   ViewChild,
 } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
@@ -24,7 +25,7 @@ import { ColorThemeService } from '../../services/color-theme.service';
   templateUrl: './infinite-scroller.component.html',
   styleUrl: './infinite-scroller.component.scss',
 })
-export class InfiniteScrollerComponent implements AfterViewChecked {
+export class InfiniteScrollerComponent implements AfterViewChecked, OnInit {
   @ViewChild('scroller') scroller!: ElementRef<HTMLDivElement>;
   @ViewChild('innerScroller') innerScroller!: ElementRef<HTMLDivElement>;
   @Input() skills: Skill[] = [];
@@ -32,20 +33,25 @@ export class InfiniteScrollerComponent implements AfterViewChecked {
   firstLoad = true;
 
   constructor(private themeService: ColorThemeService) {}
+  ngOnInit(): void {
+    // this.themeService.$themeChanged.subscribe((x) =>
+    //   this.onColorSchemeChange()
+    // );
+  }
   ngAfterViewChecked(): void {
     if (this.firstLoad) {
       if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
         this.addAnimation();
       }
     }
-    this.themeService.$themeChanged
-      .asObservable()
-      .subscribe((x) => this.onColorSchemeChange());
   }
 
   addAnimation() {
     this.scroller.nativeElement.setAttribute('data-animated', 'true');
-    var scrollerContent = Array.from(this.innerScroller.nativeElement.children);
+    const scrollerContent = Array.from(
+      this.innerScroller.nativeElement.children
+    );
+    console.log(scrollerContent);
     if (scrollerContent.length !== 0) {
       this.firstLoad = false;
       scrollerContent.forEach((item) => {
@@ -55,19 +61,36 @@ export class InfiniteScrollerComponent implements AfterViewChecked {
       });
     }
   }
-  onColorSchemeChange() {
-    if (this.themeService.currentTheme === 'dark') {
-      this.skills.forEach((skill) => {
-        if (skill.name === '.NET' || skill.name === 'Firebird') {
-          skill.invert = true;
-        }
-      });
-    } else {
-      this.skills.forEach((skill) => {
-        if (skill.name === '.NET' || skill.name === 'Firebird') {
-          skill.invert = false;
-        }
-      });
-    }
-  }
+
+  // removeAnimation() {
+  //   this.scroller.nativeElement.removeAttribute('data-animated');
+  //   const scrollerContent = Array.from(
+  //     this.innerScroller.nativeElement.children
+  //   );
+  //   scrollerContent.forEach((item) => {
+  //     if (item.getAttribute('aria-hidden') === 'true') {
+  //       this.innerScroller.nativeElement.removeChild(item);
+  //     }
+  //   });
+  // }
+  // onColorSchemeChange() {
+  //   // this.removeAnimation();
+  //   console.log('onChange', this.themeService.currentTheme);
+  //   if (this.themeService.currentTheme === 'dark') {
+  //     this.skills.forEach((skill) => {
+  //       if (skill.name === '.NET' || skill.name === 'Firebird') {
+  //         skill.invert = true;
+  //       }
+  //     });
+  //   } else {
+  //     this.skills.forEach((skill) => {
+  //       if (skill.name === '.NET' || skill.name === 'Firebird') {
+  //         skill.invert = false;
+  //       }
+  //     });
+  //   }
+  //   console.trace(this.skills);
+  //   this.addAnimation();
+  //   // location.reload();
+  // }
 }

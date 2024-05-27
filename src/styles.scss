@@ -47,7 +47,7 @@ body {
 }
 
 .invertColor {
-  filter: invert(1);
+  filter: invert(1) !important;
 }
 .red {
   color: var(--red) !important;

@@ -10,7 +10,8 @@
     },
     {
       "name": ".NET",
-      "icon": "/assets/svg/dotnet.svg"
+      "icon": "/assets/svg/dotnet.svg",
+      "invert": true
     },
     {
       "name": "CSS",
@@ -34,7 +35,8 @@
     },
     {
       "name": "Firebird",
-      "icon": "/assets/svg/firebird.svg"
+      "icon": "/assets/svg/firebird.svg",
+      "invert": true
     },
     {
       "name": "HTML",

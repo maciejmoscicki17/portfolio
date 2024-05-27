@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable, OnInit } from '@angular/core';
 import { Subject } from 'rxjs';
 
 @Injectable({
@@ -9,6 +9,14 @@ export class ColorThemeService {
   private _currentTheme: 'light' | 'dark' = 'dark';
   constructor() {}
   $themeChanged = new Subject<void>();
+  private readonly themeKey = 'selectedTheme';
+
+  init() {
+    const storedTheme = localStorage.getItem(this.themeKey);
+    if (storedTheme) {
+      this.applyTheme(storedTheme as 'light' | 'dark');
+    }
+  }
 
   setTheme(theme?: 'light' | 'dark') {
     if (this.firstLoad) {
@@ -17,16 +25,32 @@ export class ColorThemeService {
         window.matchMedia &&
         window.matchMedia('(prefers-color-scheme: dark)').matches
       ) {
-        this.setDarkTheme();
+        theme = 'dark';
+      } else {
+        theme = 'light';
       }
+      this.applyTheme(theme);
+    } else if (theme) {
+      this.applyTheme(theme);
     }
+    console.log('TC');
+
+    this.$themeChanged.next();
+  }
+
+  private applyTheme(theme: 'light' | 'dark') {
+    if (theme === 'dark') {
+      this.setDarkTheme();
+    } else {
+      this.setLightTheme();
+    }
+    console.log('tc');
     this.$themeChanged.next();
   }
   toggleTheme() {
     if (this._currentTheme === 'dark') {
-      this.setLightTheme();
-    } else this.setDarkTheme();
-    this.$themeChanged.next();
+      this.applyTheme('light');
+    } else this.applyTheme('dark');
   }
   get currentTheme(): 'light' | 'dark' {
     return this._currentTheme;
@@ -51,6 +75,7 @@ export class ColorThemeService {
       'linear-gradient(to bottom right, white, #EFF1F3)'
     );
     document.documentElement.style.setProperty('--thirdColor', 'purple');
+    localStorage.setItem(this.themeKey, this._currentTheme);
   }
   private setDarkTheme() {
     this._currentTheme = 'dark';
@@ -72,5 +97,6 @@ export class ColorThemeService {
     );
     document.body.classList.add('theme-transition');
     document.documentElement.style.setProperty('--thirdColor', 'var(--yellow)');
+    localStorage.setItem(this.themeKey, this._currentTheme);
   }
 }

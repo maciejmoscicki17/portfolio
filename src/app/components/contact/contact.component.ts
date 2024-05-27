@@ -16,7 +16,7 @@ export class ContactComponent {
   isMobile = this.screenSizeService.isMobile;
   constructor(private screenSizeService: ScreenSizeService) {
     this.screenSizeService
-      .$isMobile()
+      .$isCompact()
       .subscribe((isMobile) => (this.isMobile = isMobile));
   }
 }

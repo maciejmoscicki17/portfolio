@@ -6,6 +6,7 @@ import { Skill } from '../../interfaces/skill';
 import { HttpClient } from '@angular/common/http';
 import { CardComponent } from '../card/card.component';
 import { CommonModule } from '@angular/common';
+import { ColorThemeService } from '../../services/color-theme.service';
 
 @Component({
   selector: 'app-skills',
@@ -25,26 +26,57 @@ export class SkillsComponent implements AfterViewChecked {
   title = 'Skills';
   skills: Skill[] = [];
   loaded = false;
+  showSkills = true;
 
   constructor(
     private http: HttpClient,
-    private screenSizeService: ScreenSizeService
+    private screenSizeService: ScreenSizeService,
+    private themeService: ColorThemeService
   ) {
     this.screenSizeService.$isMobile().subscribe((isMobile) => {
       this.isMobile = isMobile;
     });
+    this.themeService.$themeChanged.subscribe((x) => this.handleThemeChange());
+  }
+
+  handleThemeChange() {
+    this.showSkills = false;
+    this.setInvert();
+    setTimeout(() => {
+      this.showSkills = true;
+    }, 100);
   }
 
   ngAfterViewChecked(): void {
     if (!this.loaded) {
+      console.log('get');
       this.http.get<{ skills: Skill[] }>('/assets/skills.json').subscribe({
         next: (data) => {
           this.skills = data.skills;
+          this.setInvert();
+          console.log('skills', this.skills);
           this.loaded = true;
         },
         error: (err) => {
           console.error(err);
         },
+      });
+    }
+  }
+
+  setInvert() {
+    console.log('invert', this.themeService.currentTheme);
+    if (this.themeService.currentTheme === 'dark') {
+      this.skills.forEach((skill) => {
+        if (skill.name === '.NET' || skill.name === 'Firebird') {
+          skill.invert = true;
+        }
+      });
+    } else {
+      this.skills.forEach((skill) => {
+        if (skill.name === '.NET' || skill.name === 'Firebird') {
+          skill.invert = false;
+        }
       });
     }
   }

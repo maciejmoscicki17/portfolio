@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container" [ngClass]="{ mobile: isMobile }">
   @for (item of contactInfo; track $index) {
   <a [href]="item.href" target="_blank">
     <span class="icon">
@@ -7,4 +7,11 @@
     {{ item.text }}
   </a>
   }
+  <div class="linkContainer">
+    @for (item of contactIcons; track $index) {
+    <a [href]="item.href" target="_blank">
+      <img [src]="item.src" [alt]="item.text" [class.invert]="invert" />
+    </a>
+    }
+  </div>
 </div>
