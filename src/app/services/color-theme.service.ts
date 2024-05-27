@@ -33,7 +33,6 @@ export class ColorThemeService {
     } else if (theme) {
       this.applyTheme(theme);
     }
-    console.log('TC');
 
     this.$themeChanged.next();
   }
@@ -44,7 +43,6 @@ export class ColorThemeService {
     } else {
       this.setLightTheme();
     }
-    console.log('tc');
     this.$themeChanged.next();
   }
   toggleTheme() {

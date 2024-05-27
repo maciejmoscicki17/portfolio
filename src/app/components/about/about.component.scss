@@ -25,6 +25,7 @@ img {
   -webkit-filter: grayscale(100%);
   filter: grayscale(100%);
   transition: all 1s;
+  border-radius: 17px;
   &:hover {
     filter: unset;
     scale: 1.1;

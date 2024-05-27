@@ -49,12 +49,10 @@ export class SkillsComponent implements AfterViewChecked {
 
   ngAfterViewChecked(): void {
     if (!this.loaded) {
-      console.log('get');
       this.http.get<{ skills: Skill[] }>('/assets/skills.json').subscribe({
         next: (data) => {
           this.skills = data.skills;
           this.setInvert();
-          console.log('skills', this.skills);
           this.loaded = true;
         },
         error: (err) => {
@@ -65,7 +63,6 @@ export class SkillsComponent implements AfterViewChecked {
   }
 
   setInvert() {
-    console.log('invert', this.themeService.currentTheme);
     if (this.themeService.currentTheme === 'dark') {
       this.skills.forEach((skill) => {
         if (skill.name === '.NET' || skill.name === 'Firebird') {

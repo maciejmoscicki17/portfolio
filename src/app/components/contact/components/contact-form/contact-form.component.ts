@@ -1,15 +1,23 @@
-import { Component } from '@angular/core';
-import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
+import { Component, ViewChild } from '@angular/core';
+import {
+  FormBuilder,
+  NgForm,
+  ReactiveFormsModule,
+  Validators,
+} from '@angular/forms';
 import { ToastService, ToastType } from '../../../../services/toast.service';
+import emailjs from '@emailjs/browser';
+import { ButtonComponent } from '../../../button/button.component';
 
 @Component({
   selector: 'app-contact-form',
   standalone: true,
-  imports: [ReactiveFormsModule],
+  imports: [ReactiveFormsModule, ButtonComponent],
   templateUrl: './contact-form.component.html',
   styleUrl: './contact-form.component.scss',
 })
 export class ContactFormComponent {
+  @ViewChild('formDirective') private formDirective!: NgForm;
   contactForm = this.fb.group({
     name: ['', Validators.required],
     email: ['', [Validators.email, Validators.required]],
@@ -39,13 +47,34 @@ export class ContactFormComponent {
   isSubmitted = false;
   constructor(private fb: FormBuilder, private toastService: ToastService) {}
 
+  async send() {
+    emailjs.init({ publicKey: 'AZWos4Ws69jUuJ_iX' });
+    const response = await emailjs.send('service_rgfbf5i', 'template_4tla62a', {
+      name: this.contactForm.value.name,
+      email: this.contactForm.value.email,
+      message: this.contactForm.value.message,
+      reply_to: this.contactForm.value.email,
+    });
+    if (response.status === 200 && response.text === 'OK') {
+      this.toastService.add({
+        content: 'Email has been sent successfully!',
+        type: ToastType.success,
+      });
+    } else {
+      this.toastService.add({
+        content: 'Email has not been sent successfully!',
+        type: ToastType.error,
+      });
+    }
+    this.formDirective.resetForm();
+    this.contactForm.reset();
+    this.isSubmitted = false;
+  }
+
   onSubmit() {
     this.isSubmitted = true;
     if (this.contactForm.valid) {
-      this.toastService.add({
-        type: ToastType.success,
-        content: 'Your message has been sent',
-      });
+      this.send();
     } else {
       let message = "Your message can't be sent, because ";
       let invalidFields = [];
@@ -100,6 +129,11 @@ export class ContactFormComponent {
     return this.contactForm.valid;
   }
   isTouched(): boolean {
-    return !this.isReady() && this.contactForm.touched;
+    return (
+      !this.isReady() &&
+      this.formFields.every((x) => {
+        return this.contactForm.get(x.name)?.touched;
+      })
+    );
   }
 }

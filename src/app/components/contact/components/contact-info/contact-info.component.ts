@@ -31,9 +31,9 @@ export class ContactInfoComponent {
   }
   contactInfo: ContactInfo[] = [
     {
-      text: 'mvciej@gmail.com',
+      text: 'maciejmoscickidev@gmail.com',
       className: 'fa-solid fa-at',
-      href: 'mailto:mvciej@gmail.com',
+      href: 'mailto:maciejmoscickidev@gmail.com',
     },
     {
       text: '+48662963898',

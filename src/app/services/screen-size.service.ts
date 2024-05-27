@@ -48,7 +48,6 @@ export class ScreenSizeService {
     }
     this.isMobile$.next(isSmall);
     this.isCompact$.next(isCompact);
-    // console.log('isSmall', isSmall, window.innerWidth);
   }
 
   public $isMobile(): Observable<boolean> {

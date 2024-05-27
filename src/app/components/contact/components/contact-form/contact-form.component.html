@@ -2,8 +2,9 @@
   class="form"
   [formGroup]="contactForm"
   (ngSubmit)="onSubmit()"
-  [class.valid]="isReady()"
   [class.touched]="isTouched()"
+  [class.valid]="isReady()"
+  #formDirective="ngForm"
 >
   @for (field of formFields; track $index) {
 
@@ -33,8 +34,5 @@
     }
   </div>
   }
-
-  <div>
-    <button type="submit" class="bn5">Send message</button>
-  </div>
+  <app-button type="submit" text="Send message"></app-button>
 </form>

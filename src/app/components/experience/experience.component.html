@@ -6,14 +6,14 @@
 <div class="experience" [ngClass]="{ mobile: isMobile }">
   <div class="half">
     <div class="image">
-      <img src="assets/monalisa.jpg" alt="monalisa" />
+      <img src="assets/workstation.png" alt="workstation" draggable="false" />
     </div>
   </div>
   <div class="half">
     @for (job of jobs; track $index) {
     <app-card>
       <div class="innerCard">
-        <h5 class="green">
+        <h5 class="pink">
           {{ job.dateFrom | date : "mediumDate" }} - @if (job.dateTo) {
           {{ job.dateTo | date : "mediumDate" }}
           } @else { Present }
