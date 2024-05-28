@@ -1,12 +1,14 @@
 <nav>
   <div class="title green largeText">Maciej Mościcki</div>
-  @if (!isMobile) {
   <div class="links">
+    @if (!isMobile) {
     <a href="#introduction">Introduction</a>
     <a href="#about">About</a>
     <a href="#experience">Experience</a>
+    <a href="#projects">Projects</a>
     <a href="#skills">Skills</a>
+    <a href="#contact">Contact</a>
+    }
     <i class="fa-solid fa-circle-half-stroke" (click)="setTheme()"></i>
   </div>
-  }
 </nav>

@@ -1,0 +1,19 @@
+<app-section-title
+  id="projects"
+  position="right"
+  title="Projects"
+></app-section-title>
+<div class="projectContainer" [ngClass]="{ mobile: isCompact }">
+  @for (project of projects; track $index) {
+  <project-preview
+    [project]="project"
+    (click)="openDialog(project)"
+  ></project-preview>
+  }
+</div>
+@if (showDialog && selectedProject) {
+<project-dialog
+  [project]="selectedProject"
+  (close)="onClose()"
+></project-dialog>
+}

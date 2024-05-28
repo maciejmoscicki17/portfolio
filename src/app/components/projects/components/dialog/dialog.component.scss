@@ -1,0 +1,62 @@
+.dialog {
+  position: fixed;
+  display: grid;
+  place-items: center;
+  height: 100dvh;
+  width: 100svw;
+  top: 0;
+  left: 0;
+  z-index: 10000;
+
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+
+  &.show {
+    opacity: 1;
+  }
+
+  .dialogContent {
+    border-radius: 8px;
+    max-height: 90dvh;
+    width: 50svw;
+    &.compactScreen {
+      max-height: 100dvh;
+
+      height: 100dvh;
+      width: 100svw;
+    }
+
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    z-index: 1;
+    .title {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      padding: 1rem;
+      box-sizing: border-box;
+      .xmark {
+        cursor: pointer;
+        aspect-ratio: 1;
+        display: grid;
+        place-items: center;
+      }
+    }
+    .content {
+      overflow-y: auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      img {
+        max-width: 90%;
+        border-radius: 8px;
+      }
+      h1,
+      h2,
+      h3 {
+        text-align: center;
+      }
+    }
+  }
+}

@@ -1,0 +1,38 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  border-radius: 8px;
+  background-image: var(--accent-gradient);
+  overflow: hidden;
+  cursor: pointer;
+  .imgContainer {
+    overflow: hidden;
+    img {
+      display: block;
+      filter: grayscale(1);
+      max-height: 200px;
+      height: auto;
+      width: auto;
+      transition: all 0.5s;
+      &:hover {
+        filter: grayscale(0);
+        scale: 1.1;
+        animation: filter 0.5s;
+      }
+    }
+  }
+  span {
+    padding-block: 1rem;
+    text-align: center;
+    color: var(--textColor);
+  }
+  &.compact {
+    .imgContainer {
+      img {
+        width: -moz-available;
+        width: -webkit-fill-available;
+        width: fill-available;
+      }
+    }
+  }
+}

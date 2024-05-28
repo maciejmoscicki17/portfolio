@@ -1,0 +1,31 @@
+<div class="dialog" (click)="onOutsideDialogClick()">
+  <div
+    class="dialogContent"
+    [ngClass]="{ compactScreen: compactScreen }"
+    (click)="onDialogClick($event)"
+    [style.background-color]="bgColor"
+    [style.color]="color"
+  >
+    <div class="title">
+      <div>
+        <b>{{ project.name }}</b>
+      </div>
+      <div class="xmark" (click)="closeDialog()">
+        <i class="fa-solid fa-xmark"></i>
+      </div>
+    </div>
+    <div class="content">
+      <img [src]="project.image" [alt]="project.name" />
+      <h3>
+        My role: <b>{{ project.role }}</b>
+      </h3>
+      <h1>{{ project.description }}</h1>
+
+      <h2>Tools: {{ project.tools }}</h2>
+      <h4>
+        Check me out on
+        <a [href]="project.link" target="_blank">Github!</a>
+      </h4>
+    </div>
+  </div>
+</div>

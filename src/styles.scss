@@ -18,6 +18,9 @@
   --thirdColor: var(--yellow);
   color-scheme: var(--colorTheme);
 }
+.no-scroll {
+  overflow: hidden;
+}
 app-root {
   display: flex;
   flex-direction: column;
