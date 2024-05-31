@@ -1,0 +1,157 @@
+[
+  {
+    "key": "who_am_i",
+    "pl": "Kim jestem?",
+    "en": "Who am I?"
+  },
+  {
+    "key": "about_description",
+    "pl": "Nazywam się MACIEJ MOŚCICKI. Jestem entuzjastą technologii z pasją do tworzenia innowacyjnych rozwiązań. Moja ekspertyza głównie obejmuje Angular i platformę .NET. Odkąd odkryłem te technologie, moja profesjonalna podróż była ekscytującą eksploracją w dziedzinie programowania. Umożliwiły mi podjęcie różnorodnych projektów, od dynamicznych stron internetowych po zaawansowane aplikacje biznesowe. Stale poszerzam swoją wiedzę i umiejętności, starając się być na bieżąco z najnowszymi trendami technologicznymi. Moja determinacja i miłość do dostarczania wysokiej jakości oprogramowania motywują mnie do dążenia do doskonałości w każdym projekcie, który podejmuję.",
+    "en": "My name is MACIEJ MOŚCICKI. I'm a technology enthusiast with a passion for crafting innovative solutions. My expertise primarily lies in Angular and the .NET platform. Since discovering these technologies, my professional journey has been an exciting exploration through the realms of programming. They've empowered me to undertake diverse projects, ranging from dynamic websites to sophisticated business applications. Continuously expanding my knowledge and skills, I strive to stay abreast of the latest technological trends. My determination and love for delivering high-quality software motivate me to pursue excellence in every project I undertake."
+  },
+  {
+    "key": "about_me",
+    "pl": "O mnie",
+    "en": "About Me"
+  },
+  {
+    "key": "experience",
+    "pl": "Doświadczenie",
+    "en": "Experience"
+  },
+  {
+    "key": "introduction",
+    "pl": "Wprowadzenie",
+    "en": "Introduction"
+  },
+  {
+    "key": "projects",
+    "pl": "Projekty",
+    "en": "Projects"
+  },
+  {
+    "key": "skills",
+    "pl": "Umiejętności",
+    "en": "Skills"
+  },
+  {
+    "key": "contact",
+    "pl": "Kontakt",
+    "en": "Contact"
+  },
+  {
+    "key": "contact_me",
+    "pl": "Skontaktuj się!",
+    "en": "Contact me!"
+  },
+  {
+    "key": "your_name",
+    "pl": "Imię",
+    "en": "Your Name"
+  },
+  {
+    "key": "your_email",
+    "pl": "Email",
+    "en": "Your Email"
+  },
+  {
+    "key": "your_message",
+    "pl": "Wiadomość",
+    "en": "Your Message"
+  },
+  {
+    "key": "developer_portfolio",
+    "pl": "© Portfolio Macieja Mościckiego",
+    "en": "© Developer Portfolio by Maciej Mościcki"
+  },
+  {
+    "key": "inspired_by",
+    "pl": "Zainspirowane przez",
+    "en": "Inspired By"
+  },
+  {
+    "key": "this_is",
+    "pl": "Nazywam się",
+    "en": "This is"
+  },
+  {
+    "key": "hello",
+    "pl": "Cześć",
+    "en": "Hello"
+  },
+  {
+    "key": "i_am",
+    "pl": "jestem",
+    "en": "I am a"
+  },
+  {
+    "key": "professional",
+    "pl": "profesjonalnym",
+    "en": "Professional"
+  },
+  {
+    "key": "software",
+    "pl": "Inżynierem",
+    "en": "Software"
+  },
+  {
+    "key": "developer",
+    "pl": "Oprogramowania",
+    "en": "Developer"
+  },
+  {
+    "key": "download_cv",
+    "pl": "Pobierz CV",
+    "en": "Download CV"
+  },
+  {
+    "key": "fullstack_programmer",
+    "pl": "Programista full-stack",
+    "en": "Full stack programmer"
+  },
+  {
+    "key": "intern_programmer",
+    "pl": "Stażysta Programistyczny",
+    "en": "Intern Programmer"
+  },
+  {
+    "key": "online_shop_maintainer",
+    "pl": "Nadzorca sklepu internetowego",
+    "en": "Online Shop Maintainer"
+  },
+  {
+    "key": "calendar_description",
+    "pl": "Projekt 'Kalendarz', jest obecnie w fazie rozwoju. Ta kompleksowa aplikacja ma na celu zapewnienie wszechstronnego rozwiązania kalendarzowego w ramach Angulara.",
+    "en": "An ongoing project, the Angular All-In-One Calendar Application, is currently under development. This comprehensive application aims to provide a versatile calendar solution within the Angular framework."
+  },
+  {
+    "key": "conductance_description",
+    "pl": "Ta ukończona aplikacja analizuje pliki wejściowe Excela, aby efektywnie generować profesjonalne wykresy przewodności akademickiej.",
+    "en": "This completed application analyzes Excel input files to generate professional academic conductance charts efficiently."
+  },
+  {
+    "key": "my_role",
+    "pl": "Moja rola:",
+    "en": "My role:"
+  },
+  {
+    "key": "tools",
+    "pl": "Użyte narzędzia:",
+    "en": "Tools:"
+  },
+  {
+    "key": "check_out_on",
+    "pl": "Sprawdź kod na",
+    "en": "Check me out on"
+  },
+  {
+    "key": "github",
+    "pl": "Githubie!",
+    "en": "Github!"
+  },
+  {
+    "key": "present",
+    "pl": "Teraz",
+    "en": "Present"
+  }
+]

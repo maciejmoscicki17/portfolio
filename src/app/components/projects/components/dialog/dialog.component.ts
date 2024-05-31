@@ -13,11 +13,12 @@ import { Project } from '../../../../models/project';
 import { ColorThemeService } from '../../../../services/color-theme.service';
 import { ScreenSizeService } from '../../../../services/screen-size.service';
 import { CommonModule } from '@angular/common';
+import { TranslatePipe } from '../../../../pipes/translate.pipe';
 
 @Component({
   selector: 'project-dialog',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, TranslatePipe],
   templateUrl: './dialog.component.html',
   styleUrl: './dialog.component.scss',
 })

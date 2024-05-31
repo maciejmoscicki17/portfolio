@@ -1,9 +1,12 @@
-<app-section-title id="about" [title]="title"></app-section-title>
+<app-section-title
+  id="about"
+  [title]="'about_me' | translate"
+></app-section-title>
 <section class="about" [ngClass]="{ isMobile: isMobile }">
   <div class="description">
-    <h2 class="green">WHO AM I?</h2>
+    <h2 class="green">{{ "who_am_i" | translate }}</h2>
     <h3>
-      {{ description }}
+      {{ "about_description" | translate }}
     </h3>
   </div>
 

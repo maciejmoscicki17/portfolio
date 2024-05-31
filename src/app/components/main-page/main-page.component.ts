@@ -5,9 +5,7 @@ import { ContentComponent } from '../content/content.component';
 import { HeaderComponent } from '../header/header.component';
 import { NotFoundComponent } from '../not-found/not-found.component';
 import { ProgressBarComponent } from '../progress-bar/progress-bar.component';
-import { ToastComponent } from '../toast/toast.component';
 import { CommonModule } from '@angular/common';
-import { FooterComponent } from '../footer/footer.component';
 
 @Component({
   selector: 'app-main-page',
@@ -16,7 +14,6 @@ import { FooterComponent } from '../footer/footer.component';
     CommonModule,
     HeaderComponent,
     ContentComponent,
-    ToastComponent,
     ProgressBarComponent,
     NotFoundComponent,
   ],

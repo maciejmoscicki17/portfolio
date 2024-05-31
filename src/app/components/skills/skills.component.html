@@ -1,4 +1,7 @@
-<app-section-title id="skills" [title]="title"></app-section-title>
+<app-section-title
+  id="skills"
+  [title]="'skills' | translate"
+></app-section-title>
 @if (!isMobile) { @if (skills && showSkills) {
 <app-infinite-scroller [skills]="skills"></app-infinite-scroller>
 } } @else {
