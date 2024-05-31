@@ -3,7 +3,7 @@ import { InfiniteScrollerComponent } from '../infinite-scroller/infinite-scrolle
 import { SectionTitleComponent } from '../section-title/section-title.component';
 import { ScreenSizeService } from '../../services/screen-size.service';
 import { Skill } from '../../interfaces/skill';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { CardComponent } from '../card/card.component';
 import { CommonModule } from '@angular/common';
 import { ColorThemeService } from '../../services/color-theme.service';
@@ -49,8 +49,9 @@ export class SkillsComponent implements AfterViewChecked {
 
   ngAfterViewChecked(): void {
     if (!this.loaded) {
-      this.http.get<{ skills: Skill[] }>('/assets/skills.json').subscribe({
+      this.http.get<{ skills: Skill[] }>('assets/skills.json').subscribe({
         next: (data) => {
+          console.warn(data);
           this.skills = data.skills;
           this.setInvert();
           this.loaded = true;

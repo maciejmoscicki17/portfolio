@@ -1,8 +1,8 @@
 <app-section-title id="skills" [title]="title"></app-section-title>
-
-<!-- @if (!isMobile) { @if (skills && showSkills) {
+{{ skills }}
+@if (!isMobile) { @if (skills && showSkills) {
 <app-infinite-scroller [skills]="skills"></app-infinite-scroller>
-} } @else { -->
+} } @else {
 <div class="carousel">
   @for (skill of skills; track $index) {
   <app-card class="item" border="">
@@ -17,4 +17,4 @@
   </app-card>
   }
 </div>
-<!-- } -->
+}
