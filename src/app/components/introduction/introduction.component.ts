@@ -4,6 +4,7 @@ import { DescriptionComponent } from '../description/description.component';
 import { ScreenSizeService } from '../../services/screen-size.service';
 import { CommonModule } from '@angular/common';
 import { SectionTitleComponent } from '../section-title/section-title.component';
+import { TranslatePipe } from '../../pipes/translate.pipe';
 
 @Component({
   selector: 'app-introduction',
@@ -13,12 +14,12 @@ import { SectionTitleComponent } from '../section-title/section-title.component'
     TerminalComponent,
     DescriptionComponent,
     SectionTitleComponent,
+    TranslatePipe,
   ],
   templateUrl: './introduction.component.html',
   styleUrl: './introduction.component.scss',
 })
 export class IntroductionComponent implements OnInit {
-  title = 'Introduction';
   isCompact = this.screenSizeService.isCompact;
   constructor(private screenSizeService: ScreenSizeService) {}
 

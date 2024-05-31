@@ -4,7 +4,8 @@ nav {
   justify-content: space-between;
   height: 2rem;
   padding-block: 1rem;
-  gap: 2rem;
+  gap: 1rem;
+  box-sizing: unset;
 }
 .title {
   align-items: center;

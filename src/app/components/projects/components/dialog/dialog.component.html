@@ -17,14 +17,14 @@
     <div class="content">
       <img [src]="project.image" [alt]="project.name" />
       <h3>
-        My role: <b>{{ project.role }}</b>
+        {{ "my_role" | translate }} <b>{{ project.role }}</b>
       </h3>
       <h1>{{ project.description }}</h1>
 
-      <h2>Tools: {{ project.tools }}</h2>
+      <h2>{{ "tools" | translate }} {{ project.tools }}</h2>
       <h4>
-        Check me out on
-        <a [href]="project.link" target="_blank">Github!</a>
+        {{ "check_out_on" | translate }}
+        <a [href]="project.link" target="_blank">{{ "github" | translate }}</a>
       </h4>
     </div>
   </div>

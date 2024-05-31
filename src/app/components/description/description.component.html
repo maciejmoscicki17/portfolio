@@ -1,22 +1,21 @@
 <h1>
   <div class="line">
-    <span> Hello, </span>
+    <span> {{ "hello" | translate }}, </span>
   </div>
   <div class="line">
-    <span>This </span>
-    <span>is </span>
+    <span>{{ "this_is" | translate }} </span>
     <span class="pink">Maciej </span>
     <span class="pink">Mościcki</span>
     <span>, </span>
-    <span>I'm </span>
-    <span>a </span>
-    <span>Professional </span>
-    <span class="green">Software </span>
-    <span class="green">Developer </span>
+    <span>{{ "i_am" | translate }} </span>
+    <span></span>
+    <span>{{ "professional" | translate }} </span>
+    <span class="green">{{ "software" | translate }} </span>
+    <span class="green">{{ "developer" | translate }} </span>
   </div>
 </h1>
 <app-button
-  text="Download CV"
+  [text]="'download_cv' | translate"
   icon="fa-solid fa-download"
   [link]="link"
 ></app-button>

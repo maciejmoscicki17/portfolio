@@ -1,0 +1,6 @@
+<p-dropdown [options]="options" [(ngModel)]="optionModel" optionLabel="icon">
+  <ng-template let-item pTemplate="selectedItem">
+    <img [src]="item.icon" />
+  </ng-template>
+  <ng-template let-item pTemplate="item"><img [src]="item.icon" /></ng-template>
+</p-dropdown>

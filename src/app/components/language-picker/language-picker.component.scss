@@ -1,0 +1,17 @@
+img {
+  width: 40px !important;
+}
+::ng-deep.p-component {
+  display: flex;
+  padding: 0;
+}
+::ng-deep.p-dropdown-label {
+  display: flex;
+  padding: 0;
+}
+::ng-deep.p-dropdown-item {
+  img {
+    height: 30px;
+    width: 40px !important;
+  }
+}

@@ -1,4 +1,4 @@
-import { Component, ViewChild } from '@angular/core';
+import { Component, OnDestroy, ViewChild } from '@angular/core';
 import {
   FormBuilder,
   NgForm,
@@ -8,6 +8,8 @@ import {
 import { ToastService, ToastType } from '../../../../services/toast.service';
 import emailjs from '@emailjs/browser';
 import { ButtonComponent } from '../../../button/button.component';
+import { TranslationsService } from '../../../../services/translations.service';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-contact-form',
@@ -16,36 +18,37 @@ import { ButtonComponent } from '../../../button/button.component';
   templateUrl: './contact-form.component.html',
   styleUrl: './contact-form.component.scss',
 })
-export class ContactFormComponent {
+export class ContactFormComponent implements OnDestroy {
   @ViewChild('formDirective') private formDirective!: NgForm;
+  subscription = new Subscription();
   contactForm = this.fb.group({
     name: ['', Validators.required],
     email: ['', [Validators.email, Validators.required]],
     message: ['', Validators.required],
   });
 
-  formFields = [
-    {
-      label: 'Your name',
-      name: 'name',
-      type: 'text',
-      errorMsg: 'This field is required!',
-    },
-    {
-      label: 'Your e-mail',
-      name: 'email',
-      type: 'email',
-      errorMsg: 'Email is incorrect!',
-    },
-    {
-      label: 'Your message',
-      name: 'message',
-      type: 'text',
-      errorMsg: 'This field is required!',
-    },
-  ];
+  formFields: {
+    label: string;
+    name: string;
+    type: string;
+    errorMsg: string;
+  }[] = [];
   isSubmitted = false;
-  constructor(private fb: FormBuilder, private toastService: ToastService) {}
+  constructor(
+    private fb: FormBuilder,
+    private toastService: ToastService,
+    private translationsService: TranslationsService
+  ) {
+    this.loadFormFields();
+    this.subscription.add(
+      this.translationsService.languageChange$.subscribe(() =>
+        this.loadFormFields()
+      )
+    );
+  }
+  ngOnDestroy(): void {
+    this.subscription.unsubscribe();
+  }
 
   async send() {
     emailjs.init({ publicKey: 'AZWos4Ws69jUuJ_iX' });
@@ -135,5 +138,28 @@ export class ContactFormComponent {
         return this.contactForm.get(x.name)?.touched;
       })
     );
+  }
+
+  loadFormFields() {
+    this.formFields = [
+      {
+        label: this.translationsService.translate('your_name'),
+        name: 'name',
+        type: 'text',
+        errorMsg: 'This field is required!',
+      },
+      {
+        label: this.translationsService.translate('your_email'),
+        name: 'email',
+        type: 'email',
+        errorMsg: 'Email is incorrect!',
+      },
+      {
+        label: this.translationsService.translate('your_message'),
+        name: 'message',
+        type: 'text',
+        errorMsg: 'This field is required!',
+      },
+    ];
   }
 }

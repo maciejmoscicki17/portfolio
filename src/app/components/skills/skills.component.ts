@@ -7,6 +7,7 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { CardComponent } from '../card/card.component';
 import { CommonModule } from '@angular/common';
 import { ColorThemeService } from '../../services/color-theme.service';
+import { TranslatePipe } from '../../pipes/translate.pipe';
 
 @Component({
   selector: 'app-skills',
@@ -16,13 +17,13 @@ import { ColorThemeService } from '../../services/color-theme.service';
     InfiniteScrollerComponent,
     SectionTitleComponent,
     CardComponent,
+    TranslatePipe,
   ],
   templateUrl: './skills.component.html',
   styleUrl: './skills.component.scss',
 })
 export class SkillsComponent implements AfterViewChecked {
   isMobile = this.screenSizeService.isMobile;
-  title = 'Skills';
   skills: Skill[] = [];
   loaded = false;
   showSkills = true;

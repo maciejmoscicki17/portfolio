@@ -1,6 +1,6 @@
 <app-section-title
   id="experience"
-  [title]="title"
+  [title]="'experience' | translate"
   position="left"
 ></app-section-title>
 <div class="experience" [ngClass]="{ mobile: isMobile }">
@@ -16,7 +16,7 @@
         <h5 class="pink">
           {{ job.dateFrom | date : "mediumDate" }} - @if (job.dateTo) {
           {{ job.dateTo | date : "mediumDate" }}
-          } @else { Present }
+          } @else { {{ "present" | translate }} }
         </h5>
         <br />
         <h3>{{ job.companyName }}</h3>

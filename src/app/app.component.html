@@ -1,6 +1,9 @@
-@defer {
+<loader></loader>
+<app-toast></app-toast>
+
+@if (translationsLoaded) { @defer {
 <router-outlet></router-outlet>
 
 } @error {
 <app-not-found></app-not-found>
-}
+} }

@@ -1,7 +1,7 @@
 <app-section-title
   id="projects"
   position="right"
-  title="Projects"
+  [title]="'projects' | translate"
 ></app-section-title>
 <div class="projectContainer" [ngClass]="{ mobile: isCompact }">
   @for (project of projects; track $index) {

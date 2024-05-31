@@ -18,7 +18,7 @@ export class ToastComponent implements OnInit {
   readonly toastTypes = ToastType;
 
   constructor(private toastService: ToastService) {
-    this.toastService.showToast.subscribe((toast) => {
+    this.toastService.showToast.asObservable().subscribe((toast) => {
       this.toasts.push(toast);
       setTimeout(() => {
         this.removeToast(toast.id!);

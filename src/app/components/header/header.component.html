@@ -2,13 +2,14 @@
   <div class="title green largeText">Maciej Mościcki</div>
   <div class="links">
     @if (!isMobile) {
-    <a href="#introduction">Introduction</a>
-    <a href="#about">About</a>
-    <a href="#experience">Experience</a>
-    <a href="#projects">Projects</a>
-    <a href="#skills">Skills</a>
-    <a href="#contact">Contact</a>
+    <a href="#introduction">{{ "introduction" | translate }}</a>
+    <a href="#about">{{ "about_me" | translate }}</a>
+    <a href="#experience">{{ "experience" | translate }}</a>
+    <a href="#projects">{{ "projects" | translate }}</a>
+    <a href="#skills">{{ "skills" | translate }}</a>
+    <a href="#contact">{{ "contact" | translate }}</a>
     }
     <i class="fa-solid fa-circle-half-stroke" (click)="setTheme()"></i>
+    <language-picker></language-picker>
   </div>
 </nav>
