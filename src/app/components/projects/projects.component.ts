@@ -29,7 +29,7 @@ export class ProjectsComponent {
       description:
         'An ongoing project, the Angular All-In-One Calendar Application, is currently under development. This comprehensive application aims to provide a versatile calendar solution within the Angular framework.',
       link: 'https://github.com/maciejmoscicki17/Calendar',
-      image: '/portfolio/assets/img/calendar.png',
+      image: 'assets/img/calendar.png',
     },
     {
       name: 'Conductance Charts',
@@ -38,7 +38,7 @@ export class ProjectsComponent {
       description:
         'This completed application analyzes Excel input files to generate professional academic conductance charts efficiently.',
       link: 'https://github.com/maciejmoscicki17/conductanceChart',
-      image: '/portfolio/assets/img/charts.png',
+      image: 'assets/img/charts.png',
     },
   ];
 
