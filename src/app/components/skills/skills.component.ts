@@ -21,7 +21,6 @@ import { ColorThemeService } from '../../services/color-theme.service';
   styleUrl: './skills.component.scss',
 })
 export class SkillsComponent implements AfterViewChecked {
-  //TODO: Naprawić aktualizaje kolorów skilli po zmianie motywu
   isMobile = this.screenSizeService.isMobile;
   title = 'Skills';
   skills: Skill[] = [];
@@ -51,7 +50,6 @@ export class SkillsComponent implements AfterViewChecked {
     if (!this.loaded) {
       this.http.get<{ skills: Skill[] }>('assets/skills.json').subscribe({
         next: (data) => {
-          console.warn(data);
           this.skills = data.skills;
           this.setInvert();
           this.loaded = true;

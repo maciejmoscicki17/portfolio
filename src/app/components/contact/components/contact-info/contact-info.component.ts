@@ -50,12 +50,12 @@ export class ContactInfoComponent {
   contactIcons = [
     {
       text: 'Github',
-      src: '/assets/svg/github.svg',
+      src: 'assets/svg/github.svg',
       href: 'https://github.com/maciejmoscicki17',
     },
     {
       text: 'LinkedIn',
-      src: '/assets/svg/linkedin.svg',
+      src: 'assets/svg/linkedin.svg',
       href: 'https://linkedin.com/in/maciej-mościcki-02a278240',
     },
   ];
